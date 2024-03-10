@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat com Aprendizado</title>
+
+  <!-- Inclua seus estilos CSS aqui -->
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div id="chat-box"></div>
+  <input type="text" id="user-input" placeholder="Digite sua mensagem...">
+  <button onclick="sendMessage()">Enviar</button>
+
+  <!-- Tabela para visualizar o aprendizado em tempo real -->
+  <table id="learning-table">
+    <thead>
+      <tr>
+        <th>Timestamp</th>
+        <th>Informação Aprendida</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- Inclua seu script JavaScript aqui -->
+  <script src="/script.js"></script>
+
+  <script>
+    // Variável para armazenar a base de conhecimento do sistema
+    var knowledgeBase = {};
+
+    // Adiciona uma tabela para visualizar o aprendizado em tempo real
+    function addTable(timestamp, info) {
+      var table = document.getElementById("learning-table");
+      var row = table.insertRow(-1);
+
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+
+      cell1.innerText = timestamp;
+      cell2.innerText = info;
+    }
+
+    // Atualiza a tabela com o aprendizado
+    function updateLearningTable(learnedInfo) {
+      var timestamp = new Date().toISOString();
+      addTable(timestamp, learnedInfo);
+      // Adicionalmente, você pode querer chamar a função para atualizar a base de conhecimento aqui
+    }
+
+    // Restante do código JavaScript
+    function sendMessage() {
+      // ... (código da função sendMessage)
+    }
+
+    // ... (restante do código JavaScript)
+
+  </script>
+</body>
+</html>
+
